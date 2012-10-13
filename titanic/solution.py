@@ -1,16 +1,10 @@
 
-def remove_odds(applicants):
-    new = []
-    for i,p in applicants:
-        if i % 2 == 0:
-            new.append(p)
-    return new
-
 def best_position(n):
     
     applicants = range(1, n+1)
     while len(applicants) > 1:
-        applicants = remove_odds(enumerate(applicants, start=1))
+        applicants = [p for i,p in enumerate(applicants, start=1) 
+                      if i % 2 == 0]
 
     return applicants[0]
 
@@ -21,7 +15,7 @@ def test():
 
 def main():
     test()
-    n = 15
+    n = 150
     print "Best Position for", n, " applicants"
     print best_position(n)
 
