@@ -6,7 +6,7 @@ def isvowelable(word):
     return l == list(vowels)
 
 def acending_order(word):
-    return list(word)[:-1] == sorted(word)[1:]
+    return list(word.lower())[:-1] == sorted(word.lower())[1:]
 
 def main():
     print "Hello World"
@@ -24,7 +24,7 @@ def main():
     print  ''.join(vowelable_words)
     print "Words of length at least six that contain letters in strictly ascending alphabetical order"
     print len(acending_words)
-    print ''.join(acending_words)
+    print ''.join(acending_words).lower()
 
 if __name__ == "__main__":
     main()
